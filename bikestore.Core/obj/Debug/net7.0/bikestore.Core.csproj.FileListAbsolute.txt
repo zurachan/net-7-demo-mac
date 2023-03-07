@@ -1,0 +1,12 @@
+/Volumes/DATAS/duong/bikestore/bikestore.Core/bin/Debug/net7.0/bikestore.Core.deps.json
+/Volumes/DATAS/duong/bikestore/bikestore.Core/bin/Debug/net7.0/bikestore.Core.dll
+/Volumes/DATAS/duong/bikestore/bikestore.Core/bin/Debug/net7.0/bikestore.Core.pdb
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/bikestore.Core.csproj.AssemblyReference.cache
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/bikestore.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/bikestore.Core.AssemblyInfoInputs.cache
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/bikestore.Core.AssemblyInfo.cs
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/bikestore.Core.csproj.CoreCompileInputs.cache
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/bikestore.Core.dll
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/refint/bikestore.Core.dll
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/bikestore.Core.pdb
+/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/Debug/net7.0/ref/bikestore.Core.dll

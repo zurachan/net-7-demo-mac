@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DataMapper\" />
+    <None Remove="DataProvider\" />
+    <None Remove="DataMapper\Sale\" />
+    <None Remove="SqlDataProvider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataMapper\" />
+    <Folder Include="DataProvider\" />
+    <Folder Include="DataMapper\Sale\" />
+    <Folder Include="SqlDataProvider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bikestore.Entity\bikestore.Entity.csproj" />
+    <ProjectReference Include="..\bikestore.Core\bikestore.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EnterpriseLibrary.Data" Version="6.0.1304" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+</Project>
