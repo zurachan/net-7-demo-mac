@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZLwsXTLDikS0U1p8bP9Ek9igA9SFC3eNLrYg+eqYTyI3iL6z6uHi6O8/IYSSb4QNCuiRL7l7PV+T5Dy3Zq5y5Q==",
+  "dgSpecHash": "2iAIcbbZNo1zTDn073yehzecooE1DJ2x+ZQrFV0zB4GVzFKg2qOMswz75LYbNhrb9uQl5xDOLeTXC58aCWjHUw==",
   "success": true,
-  "projectFilePath": "/Volumes/DATAS/duong/bikestore/bikestore.Api/bikestore.Api.csproj",
+  "projectFilePath": "/Volumes/DATAS/duong/net-7/bikestore.Api/bikestore.Api.csproj",
   "expectedPackageFiles": [
     "/Users/thanhvu/.nuget/packages/enterpriselibrary.common/6.0.1304/enterpriselibrary.common.6.0.1304.nupkg.sha512",
     "/Users/thanhvu/.nuget/packages/enterpriselibrary.data/6.0.1304/enterpriselibrary.data.6.0.1304.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T18CTmm3Yv3wugYaBLhooX78/JDLDAkdJNlcsPFtm4RXkxGVMQPJBTRtxIgHNC2m/S1TrveTFO2QJdY1/oFwBw==",
+  "dgSpecHash": "qdWJXAwllmCdSD5FtZhSUzyck2Y+SMu7WOL/GLzIouuCTfyvs4/4WL/jEYQ0+ovDvfAX5558ss8mAtr/wn8EPA==",
   "success": true,
-  "projectFilePath": "/Volumes/DATAS/duong/bikestore/bikestore.Entity/bikestore.Entity.csproj",
+  "projectFilePath": "/Volumes/DATAS/duong/net-7/bikestore.Entity/bikestore.Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

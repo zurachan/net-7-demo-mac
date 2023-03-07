@@ -755,11 +755,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Volumes/DATAS/duong/bikestore/bikestore.DataAccess/bikestore.DataAccess.csproj",
+      "projectUniqueName": "/Volumes/DATAS/duong/net-7/bikestore.DataAccess/bikestore.DataAccess.csproj",
       "projectName": "bikestore.DataAccess",
-      "projectPath": "/Volumes/DATAS/duong/bikestore/bikestore.DataAccess/bikestore.DataAccess.csproj",
+      "projectPath": "/Volumes/DATAS/duong/net-7/bikestore.DataAccess/bikestore.DataAccess.csproj",
       "packagesPath": "/Users/thanhvu/.nuget/packages/",
-      "outputPath": "/Volumes/DATAS/duong/bikestore/bikestore.DataAccess/obj/",
+      "outputPath": "/Volumes/DATAS/duong/net-7/bikestore.DataAccess/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/thanhvu/.nuget/NuGet/NuGet.Config"
@@ -774,11 +774,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Volumes/DATAS/duong/bikestore/bikestore.Core/bikestore.Core.csproj": {
-              "projectPath": "/Volumes/DATAS/duong/bikestore/bikestore.Core/bikestore.Core.csproj"
+            "/Volumes/DATAS/duong/net-7/bikestore.Core/bikestore.Core.csproj": {
+              "projectPath": "/Volumes/DATAS/duong/net-7/bikestore.Core/bikestore.Core.csproj"
             },
-            "/Volumes/DATAS/duong/bikestore/bikestore.Entity/bikestore.Entity.csproj": {
-              "projectPath": "/Volumes/DATAS/duong/bikestore/bikestore.Entity/bikestore.Entity.csproj"
+            "/Volumes/DATAS/duong/net-7/bikestore.Entity/bikestore.Entity.csproj": {
+              "projectPath": "/Volumes/DATAS/duong/net-7/bikestore.Entity/bikestore.Entity.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Volumes/DATAS/duong/bikestore/bikestore.Core/bikestore.Core.csproj": {}
+    "/Volumes/DATAS/duong/net-7/bikestore.Core/bikestore.Core.csproj": {}
   },
   "projects": {
-    "/Volumes/DATAS/duong/bikestore/bikestore.Core/bikestore.Core.csproj": {
+    "/Volumes/DATAS/duong/net-7/bikestore.Core/bikestore.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Volumes/DATAS/duong/bikestore/bikestore.Core/bikestore.Core.csproj",
+        "projectUniqueName": "/Volumes/DATAS/duong/net-7/bikestore.Core/bikestore.Core.csproj",
         "projectName": "bikestore.Core",
-        "projectPath": "/Volumes/DATAS/duong/bikestore/bikestore.Core/bikestore.Core.csproj",
+        "projectPath": "/Volumes/DATAS/duong/net-7/bikestore.Core/bikestore.Core.csproj",
         "packagesPath": "/Users/thanhvu/.nuget/packages/",
-        "outputPath": "/Volumes/DATAS/duong/bikestore/bikestore.Core/obj/",
+        "outputPath": "/Volumes/DATAS/duong/net-7/bikestore.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/thanhvu/.nuget/NuGet/NuGet.Config"

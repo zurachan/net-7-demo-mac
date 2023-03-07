@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = bikestore.Entity
-build_property.ProjectDir = /Volumes/DATAS/duong/bikestore/bikestore.Entity/
+build_property.ProjectDir = /Volumes/DATAS/duong/net-7/bikestore.Entity/

@@ -1,0 +1,51 @@
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Store</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="#!">Home</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/store']" routerLinkActive="router-link-active">Index</a></li>
+
+        <li *ngIf="store.id > 0" class="breadcrumb-item active">
+            Edit...
+        </li>
+        <li *ngIf="store.id == undefined" class="breadcrumb-item active">
+            Create...
+        </li>
+    </ol>
+
+    <form id="frmBrand">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Nhập..." name="name" [(ngModel)]="store.name" />
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="text" class="form-control" placeholder="Nhập..." name="phone" [(ngModel)]="store.phone" />
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" placeholder="Nhập..." name="email" [(ngModel)]="store.email" />
+        </div>
+        <div class="form-group">
+            <label>Street</label>
+            <input type="text" class="form-control" placeholder="Nhập..." name="street" [(ngModel)]="store.street" />
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" placeholder="Nhập..." name="city" [(ngModel)]="store.city" />
+        </div>
+        <div class="form-group">
+            <label>State</label>
+            <input type="text" class="form-control" placeholder="Nhập..." name="state" [(ngModel)]="store.state" />
+        </div>
+        <div class="form-group">
+            <label>Zip Code</label>
+            <input type="text" class="form-control" placeholder="Nhập..." name="zipCode" [(ngModel)]="store.zipCode" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" (click)="OnSubmit(); $event.preventDefault()" class="btn btn-primary">
+                Save
+            </button>
+        </div>
+    </form>
+</div>

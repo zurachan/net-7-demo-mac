@@ -1,0 +1,49 @@
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Store</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="#!">Home</a></li>
+        <li class="breadcrumb-item active">Index</li>
+    </ol>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th style="width: 200px">
+                    <a class="btn btn-success" [routerLink]="['/store/0']" routerLinkActive="router-link-active"><i
+                            class="fa fa-plus" aria-hidden="true"> </i> Create New</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of store">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.phone }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.street }}</td>
+                <td>{{ item.city }}</td>
+                <td>{{ item.state }}</td>
+                <td>{{ item.zipCode }}</td>
+                <td>
+                    <!-- <a class="btn btn-primary" [routerLink]="['/store/', item.id]"
+                        routerLinkActive="router-link-active">Edit</a> -->
+                    <button class="btn btn-primary" (click)="OnEdit(item)">
+                        Edit
+                    </button>
+                    |&nbsp;
+                    <button class="btn btn-warning" (click)="OnDelete(item)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

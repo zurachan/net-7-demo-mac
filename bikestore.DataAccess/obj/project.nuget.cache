@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ru4Z4sMiRl4O8qffOSAetM8pOT2mGUmHcFYnJax8BQHgvdKEL75n/ZZ3nNhFOyvu+PySkLXb0H3U5y9J1OF4jw==",
+  "dgSpecHash": "U+TkoqDvvwww1nTWOeCmChW8RxKhR5sAV1w1h1COjIzaWg2sWZrr9pszx9q/PJq81a8HaMdZoCRnxOzO36caGg==",
   "success": true,
-  "projectFilePath": "/Volumes/DATAS/duong/bikestore/bikestore.DataAccess/bikestore.DataAccess.csproj",
+  "projectFilePath": "/Volumes/DATAS/duong/net-7/bikestore.DataAccess/bikestore.DataAccess.csproj",
   "expectedPackageFiles": [
     "/Users/thanhvu/.nuget/packages/enterpriselibrary.common/6.0.1304/enterpriselibrary.common.6.0.1304.nupkg.sha512",
     "/Users/thanhvu/.nuget/packages/enterpriselibrary.data/6.0.1304/enterpriselibrary.data.6.0.1304.nupkg.sha512",

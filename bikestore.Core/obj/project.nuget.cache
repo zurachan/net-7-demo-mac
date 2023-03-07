@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J3P7pODDm94r78rw46GWENim82afSbbPOFkUsWx3s/tIaYKqGTkX429/oVq7m6xeKHMpmdRspHTUL4jSugG1Yg==",
+  "dgSpecHash": "HttZ9bCWd3CHCny2dsBTQPvEQ9blv1uvVHmUICTCe7z9aXLUGmrLEGaEEGIVfWL6yabNbo0bfdWx2ItrPCfWkQ==",
   "success": true,
-  "projectFilePath": "/Volumes/DATAS/duong/bikestore/bikestore.Core/bikestore.Core.csproj",
+  "projectFilePath": "/Volumes/DATAS/duong/net-7/bikestore.Core/bikestore.Core.csproj",
   "expectedPackageFiles": [
     "/Users/thanhvu/.nuget/packages/microsoft.extensions.configuration/7.0.0/microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "/Users/thanhvu/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
