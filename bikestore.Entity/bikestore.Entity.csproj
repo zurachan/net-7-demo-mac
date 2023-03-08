@@ -8,8 +8,10 @@
 
   <ItemGroup>
     <None Remove="Sale\" />
+    <None Remove="Management\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Sale\" />
+    <Folder Include="Management\" />
   </ItemGroup>
 </Project>

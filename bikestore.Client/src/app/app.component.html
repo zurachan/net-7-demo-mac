@@ -1,16 +1,22 @@
-<app-navbar></app-navbar>
-<div id="layoutSidenav">
-  <div id="layoutSidenav_nav">
-    <app-sidenav></app-sidenav>
-  </div>
+<ng-container *ngIf="isAuthenticated(); else unauthenticated">
+  <app-navbar></app-navbar>
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+      <app-sidenav></app-sidenav>
+    </div>
 
-  <div id="layoutSidenav_content">
-    <main>
-      <router-outlet></router-outlet>
-    </main>
+    <div id="layoutSidenav_content">
+      <main>
+        <router-outlet></router-outlet>
+      </main>
 
-    <footer class="py-4 bg-light mt-auto">
-      <app-footer></app-footer>
-    </footer>
+      <footer class="py-4 bg-light mt-auto">
+        <app-footer></app-footer>
+      </footer>
+    </div>
   </div>
-</div>
+</ng-container>
+
+<ng-template #unauthenticated>
+  <app-unauthenticated-content></app-unauthenticated-content>
+</ng-template>

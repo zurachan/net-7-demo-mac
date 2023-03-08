@@ -1,3 +1,4 @@
+import { LoginComponent } from './layout/login/login.component';
 import { StoreDetailComponent } from './page/store/store.detail/store.detail.component';
 import { StaffComponent } from './page/staff/staff.component';
 import { StoreComponent } from './page/store/store.component';
@@ -5,6 +6,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {
+    path: 'logout',
+    component: LoginComponent,
+  },
   {
     path: 'store',
     component: StoreComponent,
@@ -23,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,9 +1,9 @@
-﻿using bikestore.Entity.Sale;
+﻿using bikestore.Core;
+using bikestore.Entity.Sale;
 
 namespace bikestore.DataAccess.DataProvider
 {
-    public interface IStoreDataProvider
+    public interface IStoreDataProvider : IRepository<Store>
     {
-        List<Store> GetAll();
     }
 }

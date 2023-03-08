@@ -14,7 +14,7 @@ export class StoreComponent implements OnInit {
     private service: StoreService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.InitData();
   }
@@ -25,9 +25,13 @@ export class StoreComponent implements OnInit {
     });
   }
 
-  OnDelete(model: Store) {}
+  OnDelete(model: Store) {
+    this.service.Delete(model.id).subscribe((res: any) => {
+      this.InitData();
+    })
+  }
 
   OnEdit(model: Store) {
-    this.router.navigateByUrl('/store/' + model.id, { state: model });
+    this.router.navigateByUrl('/store/' + model.id);
   }
 }

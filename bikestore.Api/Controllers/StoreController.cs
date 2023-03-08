@@ -1,4 +1,5 @@
 ﻿using bikestore.Core.Entity;
+using bikestore.Core.Helper;
 using bikestore.DataAccess.DataProvider;
 using bikestore.Entity.Sale;
 using Microsoft.AspNetCore.Mvc;
@@ -7,8 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace bikestore.Api.Controllers
 {
+    [ApiController]
     [Route("[controller]")]
-    public class StoreController : Controller
+    public class StoreController : ControllerBase
     {
         private readonly IStoreDataProvider _storeDataProvider;
 
@@ -17,50 +19,54 @@ namespace bikestore.Api.Controllers
             _storeDataProvider = storeDataProvider;
         }
 
-
-        // GET: api/values
         [HttpGet]
         public ResponseData GetAll()
         {
             ResponseData rs = new ResponseData();
             var data = _storeDataProvider.GetAll();
-
-            rs.Data = data;
             rs.Success = true;
-
+            rs.Data = data;
+            rs.DataTotalValue = data.Count;
             return rs;
-            //return rs JsonConvert.SerializeObject(rs);
         }
-
         [HttpGet("{Id:int}")]
         public ResponseData GetById(int Id)
         {
             ResponseData rs = new ResponseData();
-
+            var data = _storeDataProvider.GetById(Id);
+            rs.Data = data;
+            rs.Success = true;
             return rs;
         }
         [HttpPost]
-        public ResponseData Create(Store model)
+        public ResponseData Insert(Store model)
         {
             ResponseData rs = new ResponseData();
-
+            var result = _storeDataProvider.Insert(model);
+            rs.Success = ConvertHelper.ToBoolean(result.DataOutput);
+            rs.Data = result.Data;
+            rs.Message = result.UserMessage;
             return rs;
         }
         [HttpPut]
         public ResponseData Update(Store model)
         {
             ResponseData rs = new ResponseData();
-
+            var result = _storeDataProvider.Update(model);
+            rs.Success = ConvertHelper.ToBoolean(result.DataOutput);
+            rs.Data = result.Data;
+            rs.Message = result.UserMessage;
             return rs;
         }
         [HttpDelete("{Id:int}")]
         public ResponseData Delete(int Id)
         {
             ResponseData rs = new ResponseData();
-
+            var result = _storeDataProvider.Delete(Id);
+            rs.Success = ConvertHelper.ToBoolean(result.DataOutput);
+            rs.Message = result.UserMessage;
             return rs;
         }
-
     }
 }
 

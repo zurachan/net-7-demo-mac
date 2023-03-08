@@ -33,11 +33,11 @@
                 <td>{{ item.state }}</td>
                 <td>{{ item.zipCode }}</td>
                 <td>
-                    <!-- <a class="btn btn-primary" [routerLink]="['/store/', item.id]"
-                        routerLinkActive="router-link-active">Edit</a> -->
-                    <button class="btn btn-primary" (click)="OnEdit(item)">
+                    <a class="btn btn-primary" [routerLink]="['/store/', item.id]"
+                        routerLinkActive="router-link-active">Edit</a>
+                    <!-- <button class="btn btn-primary" (click)="OnEdit(item)">
                         Edit
-                    </button>
+                    </button> -->
                     |&nbsp;
                     <button class="btn btn-warning" (click)="OnDelete(item)">
                         Delete

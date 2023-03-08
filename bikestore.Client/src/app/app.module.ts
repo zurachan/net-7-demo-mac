@@ -11,6 +11,10 @@ import { StoreComponent } from './page/store/store.component';
 import { StaffComponent } from './page/staff/staff.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { StoreDetailComponent } from './page/store/store.detail/store.detail.component';
+import { LoginComponent } from './layout/login/login.component';
+import { UnauthenticatedContentModule } from './unauthenticated-content';
+import { SinglecardModule } from './layout/singlecard/singlecard.component';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +26,10 @@ import { StoreDetailComponent } from './page/store/store.detail/store.detail.com
     StaffComponent,
     ModalComponent,
     StoreDetailComponent,
+    LoginComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, UnauthenticatedContentModule, SinglecardModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
