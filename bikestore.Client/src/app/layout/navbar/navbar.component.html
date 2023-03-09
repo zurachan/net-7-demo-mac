@@ -26,7 +26,9 @@
         <li>
           <hr class="dropdown-divider" />
         </li>
-        <li><a class="dropdown-item" [routerLink]="['/logout/']" routerLinkActive="router-link-active">Logout</a></li>
+        <li>
+          <a class="dropdown-item" (click)="ClickLogOut()">Logout</a>
+        </li>
       </ul>
     </li>
   </ul>

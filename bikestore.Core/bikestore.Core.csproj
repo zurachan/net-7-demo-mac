@@ -13,9 +13,11 @@
   <ItemGroup>
     <None Remove="Helper\" />
     <None Remove="Entity\" />
+    <None Remove="Common\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helper\" />
     <Folder Include="Entity\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 </Project>

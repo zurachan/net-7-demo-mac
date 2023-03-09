@@ -12,8 +12,7 @@ export class StoreComponent implements OnInit {
   store!: Store[];
   constructor(
     private service: StoreService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
+    private router: Router
   ) { }
   ngOnInit(): void {
     this.InitData();

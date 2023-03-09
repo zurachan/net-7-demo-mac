@@ -1,3 +1,4 @@
+import { AuthenticateService } from './shared/services/authenticate.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,8 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bikestore.Client';
+  IsAuthenticated!: boolean;
 
-  isAuthenticated() {
-    return false;
+  /**
+   *
+   */
+  constructor(private authenticateService: AuthenticateService) {
+    this.IsAuthenticated = authenticateService.IsAuthenticated;
+  }
+
+  Logout(authenticated: boolean) {
+    this.authenticateService.Logout(authenticated);
+    this.IsAuthenticated = authenticated;
   }
 }

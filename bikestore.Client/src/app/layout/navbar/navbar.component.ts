@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AuthenticateService } from './../../shared/services/authenticate.service';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  @Output() LogoutEvent = new EventEmitter<boolean>();
+
+  /**
+   *
+   */
+  constructor(private authenticateService: AuthenticateService) { }
+
+  ClickLogOut() {
+    this.LogoutEvent.emit(false);
+  }
 }

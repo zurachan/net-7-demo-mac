@@ -11,12 +11,18 @@
     <None Remove="DataProvider\" />
     <None Remove="DataMapper\Sale\" />
     <None Remove="SqlDataProvider\" />
+    <None Remove="DataMapper\Management\" />
+    <None Remove="DataProvider\Management\" />
+    <None Remove="SqlDataProvider\Management\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataMapper\" />
     <Folder Include="DataProvider\" />
     <Folder Include="DataMapper\Sale\" />
     <Folder Include="SqlDataProvider\" />
+    <Folder Include="DataMapper\Management\" />
+    <Folder Include="DataProvider\Management\" />
+    <Folder Include="SqlDataProvider\Management\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\bikestore.Entity\bikestore.Entity.csproj" />

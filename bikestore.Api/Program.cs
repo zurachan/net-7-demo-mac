@@ -1,6 +1,8 @@
 ﻿using bikestore.Core;
 using bikestore.DataAccess.DataProvider;
+using bikestore.DataAccess.DataProvider.Management;
 using bikestore.DataAccess.SqlDataProvider;
+using bikestore.DataAccess.SqlDataProvider.Management;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICommonService, CommonService>();
 builder.Services.AddScoped<IStoreDataProvider, SqlStoreDataProvider>();
+builder.Services.AddScoped < IAccountDataProvider, SqlAccountDataProvider>();
 
 //services cors
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>

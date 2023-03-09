@@ -12,8 +12,10 @@ import { StaffComponent } from './page/staff/staff.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { StoreDetailComponent } from './page/store/store.detail/store.detail.component';
 import { LoginComponent } from './layout/login/login.component';
-import { UnauthenticatedContentModule } from './unauthenticated-content';
-import { SinglecardModule } from './layout/singlecard/singlecard.component';
+import { SignupComponent } from './layout/signup/signup.component';
+import { UnauthenticatedComponent } from './layout/unauthenticated/unauthenticated.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -26,9 +28,11 @@ import { SinglecardModule } from './layout/singlecard/singlecard.component';
     StaffComponent,
     ModalComponent,
     StoreDetailComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    UnauthenticatedComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, UnauthenticatedContentModule, SinglecardModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule, ToastrModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,3 +1,4 @@
+import { SignupComponent } from './layout/signup/signup.component';
 import { LoginComponent } from './layout/login/login.component';
 import { StoreDetailComponent } from './page/store/store.detail/store.detail.component';
 import { StaffComponent } from './page/staff/staff.component';
@@ -7,8 +8,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'logout',
+    path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: 'store',
