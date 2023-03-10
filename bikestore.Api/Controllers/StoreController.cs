@@ -1,7 +1,9 @@
 ﻿using bikestore.Core.Entity;
 using bikestore.Core.Helper;
 using bikestore.DataAccess.DataProvider;
+using bikestore.Entity.Management;
 using bikestore.Entity.Sale;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -19,6 +21,7 @@ namespace bikestore.Api.Controllers
             _storeDataProvider = storeDataProvider;
         }
 
+        [Authorize]
         [HttpGet]
         public ResponseData GetAll()
         {
