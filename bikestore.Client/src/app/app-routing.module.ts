@@ -1,3 +1,4 @@
+import { AuthenticateGuard } from './shared/services/authenticate.service';
 import { SignupComponent } from './layout/signup/signup.component';
 import { LoginComponent } from './layout/login/login.component';
 import { StoreDetailComponent } from './page/store/store.detail/store.detail.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {
     path: 'store',
     component: StoreComponent,
+    canActivate: [AuthenticateGuard]
   },
   {
     path: 'store/:id',

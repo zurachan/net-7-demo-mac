@@ -6,6 +6,7 @@ using bikestore.Core.Entity;
 using bikestore.Core.Helper;
 using bikestore.DataAccess.DataProvider.Management;
 using bikestore.Entity.Management;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -13,6 +14,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace bikestore.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class AccountController : ControllerBase
@@ -26,7 +28,7 @@ namespace bikestore.Api.Controllers
             _configuration = configuration;
         }
 
-        // POST api/values
+        [AllowAnonymous]
         [HttpPost]
         [Route("Signup")]
         public async Task<ResponseData> Singup([FromBody] Register model)
@@ -62,6 +64,7 @@ namespace bikestore.Api.Controllers
             return rs;
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("Login")]
         public async Task<ResponseData> Login([FromBody] Login model)
@@ -71,12 +74,7 @@ namespace bikestore.Api.Controllers
             if (dbAccount.Id != 0)
             {
                 var password = Utils.EncryptedPassword(model.Password, dbAccount.PasswordSalt);
-                if (dbAccount.PasswordHash != password)
-                {
-                    rs.Success = false;
-                    rs.Message = "Sai password!";
-                }
-                else
+                if (dbAccount.PasswordHash == password)
                 {
                     //create claims details based on the user information
                     var claims = new[] {
@@ -100,6 +98,11 @@ namespace bikestore.Api.Controllers
 
                     rs.Data = new JwtSecurityTokenHandler().WriteToken(token);
                     rs.Success = true;
+                }
+                else
+                {
+                    rs.Success = false;
+                    rs.Message = "Sai password!";
                 }
             }
             else

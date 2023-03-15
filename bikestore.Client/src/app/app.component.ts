@@ -8,17 +8,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bikestore.Client';
-  IsAuthenticated!: boolean;
+  // IsAuthenticated!: boolean;
 
   /**
    *
    */
   constructor(private authenticateService: AuthenticateService) {
-    this.IsAuthenticated = authenticateService.IsAuthenticated;
+    // this.IsAuthenticated = authenticateService.IsAuthenticated;
+  }
+
+  IsAuthenticated() {
+    return this.authenticateService.LoggedIn;
   }
 
   Logout(authenticated: boolean) {
-    this.authenticateService.Logout(authenticated);
-    this.IsAuthenticated = authenticated;
+    this.authenticateService.Logout();
+    // this.IsAuthenticated = authenticated;
   }
 }

@@ -1,6 +1,7 @@
+import { NotifierModule, NotifierService } from 'angular-notifier';
 import { AuthenticateService } from './../../shared/services/authenticate.service';
 import { Component } from '@angular/core';
-import { Login } from 'src/app/model/login.model';
+import { Login } from 'src/app/model/login.model'
 
 @Component({
   selector: 'app-login',
@@ -13,13 +14,15 @@ export class LoginComponent {
   /**
    *
    */
-  constructor(private authenticateService: AuthenticateService) { }
+  constructor(private authenticateService: AuthenticateService, private notifier: NotifierService) { }
 
-  OnClickLogin() {
-    this.authenticateService.Login(this.model).subscribe((res: any) => {
-      debugger;
-      
-    })
+  async OnClickLogin() {
+    this.model.email.trim();
+    this.model.password.trim();
+    const loginResult = await this.authenticateService.Login(this.model);
+    if (!loginResult.isOk) {
+      this.notifier.notify('error', loginResult.message);
+    }
   }
 
   OnClickForgetPassword() {

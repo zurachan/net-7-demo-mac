@@ -15,9 +15,7 @@ export class SignupComponent {
    *
    */
   constructor(private authenticateService: AuthenticateService, private toast: ToastrService) { }
-  OnClickRegister() {
-    this.authenticateService.Signup(this.model).subscribe((res: any) => {
-      this.toast.error(res.message);
-    })
+  async OnClickRegister() {
+    let result = await this.authenticateService.Signup(this.model);
   }
 }

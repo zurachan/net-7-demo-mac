@@ -1,4 +1,5 @@
-﻿using bikestore.Core.Entity;
+﻿using System.Text;
+using bikestore.Core.Entity;
 using bikestore.Core.Helper;
 using bikestore.DataAccess.DataProvider;
 using bikestore.Entity.Management;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace bikestore.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class StoreController : ControllerBase
@@ -21,7 +23,6 @@ namespace bikestore.Api.Controllers
             _storeDataProvider = storeDataProvider;
         }
 
-        [Authorize]
         [HttpGet]
         public ResponseData GetAll()
         {
