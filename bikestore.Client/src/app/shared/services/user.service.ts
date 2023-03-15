@@ -1,3 +1,4 @@
+import { GoogleLogin } from './../../model/google-login.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -21,5 +22,9 @@ export class UserService {
 
   Login(model: Login) {
     return this.http.post(`${urlApi}` + `${currentData}` + "/login", model);
+  }
+
+  LoginWithGoogle(model: GoogleLogin) {
+    return this.http.post(`${urlApi}` + `${currentData}` + "/googlelogin", model);
   }
 }

@@ -25,6 +25,13 @@ export class LoginComponent {
     }
   }
 
+  async OnClickLoginGoogle() {
+    let loginResult = await this.authenticateService.LoginWithGoogle();
+    if (!loginResult.isOk) {
+      this.notifier.notify('error', loginResult.message);
+    }
+  }
+
   OnClickForgetPassword() {
 
   }

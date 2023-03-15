@@ -1,3 +1,4 @@
+import { GoogleLogin } from './../../model/google-login.model';
 import { Router } from '@angular/router';
 import { Register } from './../../model/register.model';
 import { UserService } from './user.service';
@@ -6,13 +7,16 @@ import { BehaviorSubject, Observable, lastValueFrom } from 'rxjs';
 import { Login } from 'src/app/model/login.model';
 import { Credential } from 'src/app/model/credential.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthenticateService {
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService,
+    private router: Router,
+    private authGoogleService: SocialAuthService) {
     this.credentialSubject = new BehaviorSubject<Credential>(
       JSON.parse(localStorage.getItem('token'))
     );
@@ -51,6 +55,42 @@ export class AuthenticateService {
           data: credential,
           message: '',
         };
+      } else {
+        return {
+          isOk: false,
+          data: this.credentialSubject.value,
+          message: rs.message,
+        };
+      }
+    } catch {
+      return {
+        isOk: false,
+        message: 'Authentication failed',
+      };
+    }
+  }
+
+  async LoginWithGoogle() {
+    try {
+      debugger;
+      let token = (await this.authGoogleService.signIn(GoogleLoginProvider.PROVIDER_ID)).idToken;
+      let model = new GoogleLogin();
+      model.googleTokenId = token;
+      //SEND GOOGLETOKENID TO EXTERNAL API
+      let rs = await lastValueFrom<any>(this.userService.LoginWithGoogle(model));
+
+      if (rs.success) {
+        let credential = new Credential();
+        credential.token = rs.data;
+        this.credentialSubject.next(credential);
+        localStorage.setItem('token', JSON.stringify(rs.data));
+        this.router.navigate(['']);
+        return {
+          isOk: true,
+          data: credential,
+          message: '',
+        };
+
       } else {
         return {
           isOk: false,

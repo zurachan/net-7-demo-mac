@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment.development';
 import { JwtInterceptor } from './shared/services/http-interceptor/jwt-interceptor';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { UnauthenticatedComponent } from './layout/unauthenticated/unauthenticat
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 
 /**
  * Custom angular notifier options
@@ -85,10 +87,26 @@ const customNotifierOptions: NotifierOptions = {
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    NotifierModule.withConfig(customNotifierOptions)
+    NotifierModule.withConfig(customNotifierOptions),
+    SocialLoginModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(environment.googleClientId)
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent],
 })
