@@ -136,49 +136,37 @@ namespace bikestore.Api.Controllers
             //    throw new LogicException(new ErrorModel(ErrorType.BAD_REQUEST, result.Error.Message));
             //}
 
-            //var dbAccount = _accountDataProvider.GetByEmail(model.Email.Trim());
+            var dbAccount = _accountDataProvider.GetByEmail(payload.Email);
 
+            if (dbAccount.Id != 0)
+            {
+                //create claims details based on the user information
+                var claims = new[] {
+                        new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                        new Claim("Email", dbAccount.Email)
+                    };
 
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+                var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                var expiry = DateTime.Now.AddDays(Convert.ToInt32(_configuration["Jwt:ExpiryInDays"]));
 
-            //if (dbAccount.Id != 0)
-            //{
-            //    var password = Utils.EncryptedPassword(model.Password, dbAccount.PasswordSalt);
-            //    if (dbAccount.PasswordHash == password)
-            //    {
-            //        //create claims details based on the user information
-            //        var claims = new[] {
-            //            new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
-            //            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            //            new Claim("Email", dbAccount.Email)
-            //        };
+                var token = new JwtSecurityToken(
+                    _configuration["Jwt:Issuer"],
+                    _configuration["Jwt:Audience"],
+                    claims,
+                    expires: expiry,
+                    signingCredentials: signIn
+                    );
 
-            //        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            //        var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            //        var expiry = DateTime.Now.AddDays(Convert.ToInt32(_configuration["Jwt:ExpiryInDays"]));
-
-            //        var token = new JwtSecurityToken(
-            //            _configuration["Jwt:Issuer"],
-            //            _configuration["Jwt:Audience"],
-            //            claims,
-            //            expires: expiry,
-            //            signingCredentials: signIn
-            //            );
-
-
-            //        rs.Data = new JwtSecurityTokenHandler().WriteToken(token);
-            //        rs.Success = true;
-            //    }
-            //    else
-            //    {
-            //        rs.Success = false;
-            //        rs.Message = "Sai password!";
-            //    }
-            //}
-            //else
-            //{
-            //    rs.Success = false;
-            //    rs.Message = "Email khong ton tai!";
-            //}
+                rs.Data = new JwtSecurityTokenHandler().WriteToken(token);
+                rs.Success = true;
+            }
+            else
+            {
+                rs.Success = false;
+                rs.Message = "Tài khoảng Google không tồn tại trên hệ thống!";
+            }
 
             return rs;
         }

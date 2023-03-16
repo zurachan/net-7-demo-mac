@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable, lastValueFrom } from 'rxjs';
 import { Login } from 'src/app/model/login.model';
 import { Credential } from 'src/app/model/credential.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +37,7 @@ export class AuthenticateService {
   Logout() {
     localStorage.removeItem('token');
     this.credentialSubject.next(null);
+    this.authGoogleService.signOut();
     this.router.navigate(['/login']);
   }
 
@@ -70,15 +71,9 @@ export class AuthenticateService {
     }
   }
 
-  async LoginWithGoogle() {
+  async LoginWithGoogle(model: GoogleLogin) {
     try {
-      debugger;
-      let token = (await this.authGoogleService.signIn(GoogleLoginProvider.PROVIDER_ID)).idToken;
-      let model = new GoogleLogin();
-      model.googleTokenId = token;
-      //SEND GOOGLETOKENID TO EXTERNAL API
       let rs = await lastValueFrom<any>(this.userService.LoginWithGoogle(model));
-
       if (rs.success) {
         let credential = new Credential();
         credential.token = rs.data;
@@ -90,7 +85,6 @@ export class AuthenticateService {
           data: credential,
           message: '',
         };
-
       } else {
         return {
           isOk: false,
@@ -104,6 +98,10 @@ export class AuthenticateService {
         message: 'Authentication failed',
       };
     }
+  }
+
+  LogoutGoogle() {
+    this.authGoogleService.signOut();
   }
 
   async Signup(model: Register) {

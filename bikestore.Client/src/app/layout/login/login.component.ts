@@ -1,6 +1,7 @@
-import { NotifierModule, NotifierService } from 'angular-notifier';
+import { GoogleLogin } from './../../model/google-login.model';
+import { NotifierService } from 'angular-notifier';
 import { AuthenticateService } from './../../shared/services/authenticate.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Login } from 'src/app/model/login.model'
 
 @Component({
@@ -8,13 +9,20 @@ import { Login } from 'src/app/model/login.model'
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   model = new Login();
 
   /**
    *
    */
   constructor(private authenticateService: AuthenticateService, private notifier: NotifierService) { }
+  ngOnInit(): void {
+    (window as any).handleCredentialResponse = async (res: any) => {
+      let model = new GoogleLogin();
+      model.googleTokenId = res.credential;
+      await this.OnClickLoginGoogle(model);
+    }
+  }
 
   async OnClickLogin() {
     this.model.email.trim();
@@ -25,8 +33,8 @@ export class LoginComponent {
     }
   }
 
-  async OnClickLoginGoogle() {
-    let loginResult = await this.authenticateService.LoginWithGoogle();
+  async OnClickLoginGoogle(model: GoogleLogin) {
+    let loginResult = await this.authenticateService.LoginWithGoogle(model);
     if (!loginResult.isOk) {
       this.notifier.notify('error', loginResult.message);
     }

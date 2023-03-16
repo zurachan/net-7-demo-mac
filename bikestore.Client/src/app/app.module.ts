@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { JwtModule } from '@auth0/angular-jwt';
 
 /**
  * Custom angular notifier options
@@ -88,7 +89,20 @@ const customNotifierOptions: NotifierOptions = {
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NotifierModule.withConfig(customNotifierOptions),
-    SocialLoginModule
+    SocialLoginModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function tokenGetter() {
+          if (
+            localStorage.getItem('token') == null ||
+            localStorage.getItem('token') == undefined
+          ) {
+            return 'a';
+          }
+          return JSON.parse(localStorage.getItem('token'))['token'];
+        },
+      },
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
