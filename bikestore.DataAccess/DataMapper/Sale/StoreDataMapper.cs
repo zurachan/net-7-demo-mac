@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using bikestore.Core.Helper;
-using bikestore.Entity.Sale;
+using bikestore.Entity.BikeStore.Sale;
 
 namespace bikestore.DataAccess.DataMapper.Sale
 {

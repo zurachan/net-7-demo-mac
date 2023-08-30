@@ -5,7 +5,7 @@ using bikestore.Core.Entity;
 using bikestore.Core.Helper;
 using bikestore.DataAccess.DataMapper.Sale;
 using bikestore.DataAccess.DataProvider;
-using bikestore.Entity.Sale;
+using bikestore.Entity.BikeStore.Sale;
 
 namespace bikestore.DataAccess.SqlDataProvider
 {

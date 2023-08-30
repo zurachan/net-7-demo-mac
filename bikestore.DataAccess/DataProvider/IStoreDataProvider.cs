@@ -1,5 +1,5 @@
 ﻿using bikestore.Core;
-using bikestore.Entity.Sale;
+using bikestore.Entity.BikeStore.Sale;
 
 namespace bikestore.DataAccess.DataProvider
 {

@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1705.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bikestore.Api", "bikestore.Api\bikestore.Api.csproj", "{85DDD146-A301-4C6B-ACBF-B1BE9B6EE5EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikestore.Api", "bikestore.Api\bikestore.Api.csproj", "{85DDD146-A301-4C6B-ACBF-B1BE9B6EE5EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bikestore.Core", "bikestore.Core\bikestore.Core.csproj", "{57331144-4FD6-4F34-9072-1794C0A4605D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikestore.Core", "bikestore.Core\bikestore.Core.csproj", "{57331144-4FD6-4F34-9072-1794C0A4605D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bikestore.Entity", "bikestore.Entity\bikestore.Entity.csproj", "{12E664FD-A384-4A06-B509-3C0554AF452C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikestore.Entity", "bikestore.Entity\bikestore.Entity.csproj", "{12E664FD-A384-4A06-B509-3C0554AF452C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bikestore.DataAccess", "bikestore.DataAccess\bikestore.DataAccess.csproj", "{6B64F73B-B001-4B5E-B45A-42D09FF416B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikestore.DataAccess", "bikestore.DataAccess\bikestore.DataAccess.csproj", "{6B64F73B-B001-4B5E-B45A-42D09FF416B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bikestore.Service", "bikestore.Service\bikestore.Service.csproj", "{60C27B70-7EE6-4A1F-9D95-CC17A770E06E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bikestore.Model", "bikestore.Model\bikestore.Model.csproj", "{AF56DCD3-392D-4B8C-8808-FAE5E2F8EBC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{6B64F73B-B001-4B5E-B45A-42D09FF416B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B64F73B-B001-4B5E-B45A-42D09FF416B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B64F73B-B001-4B5E-B45A-42D09FF416B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C27B70-7EE6-4A1F-9D95-CC17A770E06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C27B70-7EE6-4A1F-9D95-CC17A770E06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C27B70-7EE6-4A1F-9D95-CC17A770E06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C27B70-7EE6-4A1F-9D95-CC17A770E06E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF56DCD3-392D-4B8C-8808-FAE5E2F8EBC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF56DCD3-392D-4B8C-8808-FAE5E2F8EBC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF56DCD3-392D-4B8C-8808-FAE5E2F8EBC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF56DCD3-392D-4B8C-8808-FAE5E2F8EBC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

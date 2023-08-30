@@ -1,6 +1,6 @@
 ﻿using System.Data;
 using bikestore.Core.Helper;
-using bikestore.Entity.Management;
+using bikestore.Entity.BikeStore.Management;
 
 namespace bikestore.DataAccess.DataMapper.Management
 {

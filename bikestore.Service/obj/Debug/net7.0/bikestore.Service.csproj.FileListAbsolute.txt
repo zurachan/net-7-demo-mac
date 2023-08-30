@@ -1,0 +1,17 @@
+D:\.net\net-7-demo-mac\bikestore.Service\bin\Debug\net7.0\bikestore.Service.deps.json
+D:\.net\net-7-demo-mac\bikestore.Service\bin\Debug\net7.0\bikestore.Service.dll
+D:\.net\net-7-demo-mac\bikestore.Service\bin\Debug\net7.0\bikestore.Service.pdb
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\bikestore.Service.csproj.AssemblyReference.cache
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\bikestore.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\bikestore.Service.AssemblyInfoInputs.cache
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\bikestore.Service.AssemblyInfo.cs
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\bikestore.Service.csproj.CoreCompileInputs.cache
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\bikestore.Service.dll
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\refint\bikestore.Service.dll
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\bikestore.Service.pdb
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\ref\bikestore.Service.dll
+D:\.net\net-7-demo-mac\bikestore.Service\bin\Debug\net7.0\bikestore.Entity.dll
+D:\.net\net-7-demo-mac\bikestore.Service\bin\Debug\net7.0\bikestore.Entity.pdb
+D:\.net\net-7-demo-mac\bikestore.Service\obj\Debug\net7.0\bikestore.Service.csproj.CopyComplete
+D:\.net\net-7-demo-mac\bikestore.Service\bin\Debug\net7.0\bikestore.Model.dll
+D:\.net\net-7-demo-mac\bikestore.Service\bin\Debug\net7.0\bikestore.Model.pdb
