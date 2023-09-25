@@ -4,7 +4,7 @@ import { Register } from './../../model/register.model';
 import { UserService } from './user.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, lastValueFrom } from 'rxjs';
-import { Login } from 'src/app/model/login.model';
+import { AuthenRequest } from 'src/app/model/login.model';
 import { Credential } from 'src/app/model/credential.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
@@ -41,15 +41,15 @@ export class AuthenticateService {
     this.router.navigate(['/login']);
   }
 
-  async Login(model: Login) {
+  async Login(model: AuthenRequest) {
     try {
       let rs = await lastValueFrom<any>(this.userService.Login(model));
       if (rs.success) {
         let credential = new Credential();
-        credential.token = rs.data;
+        credential.token = rs.data.token;
         this.credentialSubject.next(credential);
 
-        localStorage.setItem('token', JSON.stringify(rs.data));
+        localStorage.setItem('token', JSON.stringify(rs.data.token));
         this.router.navigate(['']);
         return {
           isOk: true,
@@ -76,7 +76,7 @@ export class AuthenticateService {
       let rs = await lastValueFrom<any>(this.userService.LoginWithGoogle(model));
       if (rs.success) {
         let credential = new Credential();
-        credential.token = rs.data;
+        credential.token = rs.data.token;
         this.credentialSubject.next(credential);
         localStorage.setItem('token', JSON.stringify(rs.data));
         this.router.navigate(['']);

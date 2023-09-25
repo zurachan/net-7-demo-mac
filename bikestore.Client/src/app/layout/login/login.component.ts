@@ -2,7 +2,7 @@ import { GoogleLogin } from './../../model/google-login.model';
 import { NotifierService } from 'angular-notifier';
 import { AuthenticateService } from './../../shared/services/authenticate.service';
 import { Component, OnInit } from '@angular/core';
-import { Login } from 'src/app/model/login.model'
+import { AuthenRequest } from 'src/app/model/login.model'
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,7 @@ import { Login } from 'src/app/model/login.model'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  model = new Login();
+  model = new AuthenRequest();
 
   /**
    *
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   async OnClickLogin() {
-    this.model.email.trim();
+    this.model.username.trim();
     this.model.password.trim();
     const loginResult = await this.authenticateService.Login(this.model);
     if (!loginResult.isOk) {

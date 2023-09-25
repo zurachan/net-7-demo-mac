@@ -29,6 +29,16 @@ const routes: Routes = [
     path: 'staff',
     component: StaffComponent,
   },
+  {
+    path: '',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('../app/page/system/system.component').then((m) => m.SystemComponent),
+      }
+    ]
+  }
+
 ];
 
 @NgModule({

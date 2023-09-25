@@ -1,8 +1,8 @@
-export class Login {
-    email!: string;
+export class AuthenRequest {
+    username!: string;
     password!: string | null;
 
-    constructor(init?: Partial<Login>) {
+    constructor(init?: Partial<AuthenRequest>) {
         Object.assign(this, init);
     }
 }

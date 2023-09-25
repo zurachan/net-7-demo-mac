@@ -2,11 +2,11 @@ import { GoogleLogin } from './../../model/google-login.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Login } from 'src/app/model/login.model';
+import { AuthenRequest } from 'src/app/model/login.model';
 import { Register } from 'src/app/model/register.model';
 
-const urlApi = 'https://localhost:7071/';
-const currentData = 'account';
+const urlApi = 'https://localhost:44382/api/';
+const currentData = 'Authentication';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class UserService {
     return this.http.post<Register>(`${urlApi}` + `${currentData}` + "/signup", model).pipe();
   }
 
-  Login(model: Login) {
-    return this.http.post(`${urlApi}` + `${currentData}` + "/login", model);
+  Login(model: AuthenRequest) {
+    return this.http.post(`${urlApi}` + `${currentData}` + "/Login", model);
   }
 
   LoginWithGoogle(model: GoogleLogin) {
