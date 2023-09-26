@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RoleService } from 'src/app/shared/services/role.service';
 
 @Component({
   selector: 'app-role',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private roleService: RoleService) { }
 
   ngOnInit() {
+    this.roleService.GetAll().subscribe((res: any) => {
+      if (res.success) {
+        console.log(res.data)
+      }
+    });
   }
 
 }
