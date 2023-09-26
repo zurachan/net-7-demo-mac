@@ -21,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { JwtModule } from '@auth0/angular-jwt';
+import { PreloaderComponent } from './layout/preloader/preloader.component';
 
 /**
  * Custom angular notifier options
@@ -73,6 +74,7 @@ const customNotifierOptions: NotifierOptions = {
     FooterComponent,
     NavbarComponent,
     SidenavComponent,
+    PreloaderComponent,
     StoreComponent,
     StaffComponent,
     ModalComponent,

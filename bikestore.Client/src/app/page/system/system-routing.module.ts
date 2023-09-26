@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: 'role', component: RoleComponent },
 ];
 
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
