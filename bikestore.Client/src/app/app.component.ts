@@ -23,6 +23,5 @@ export class AppComponent {
 
   Logout(authenticated: boolean) {
     this.authenticateService.Logout();
-    // this.IsAuthenticated = authenticated;
   }
 }

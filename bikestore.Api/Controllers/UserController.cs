@@ -11,12 +11,12 @@ namespace bikestore.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserService _roleService;
+        private readonly IUserService _userService;
         private readonly IMapper _mapper;
 
         public UserController(IUserService roleService, IMapper mapper)
         {
-            _roleService = roleService;
+            _userService = roleService;
             _mapper = mapper;
         }
 
@@ -25,7 +25,7 @@ namespace bikestore.Api.Controllers
         {
             try
             {
-                var roles = _roleService.GetAll();
+                var roles = _userService.GetAll();
                 return new ResponseData { Success = true, Data = _mapper.Map<List<User>, List<UserModel>>(roles) };
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace bikestore.Api.Controllers
         {
             try
             {
-                return new ResponseData { Success = true, Data = _mapper.Map<UserModel>(_roleService.GetById(id)) };
+                return new ResponseData { Success = true, Data = _mapper.Map<UserModel>(_userService.GetById(id)) };
             }
             catch (Exception ex)
             {
@@ -52,7 +52,7 @@ namespace bikestore.Api.Controllers
         {
             try
             {
-                var result = _roleService.Create(_mapper.Map<User>(model));
+                var result = _userService.Create(_mapper.Map<User>(model));
                 return new ResponseData { Success = true, Data = _mapper.Map<UserModel>(result) };
             }
             catch (Exception ex) { return new ResponseData { Success = false, Message = ex.Message }; }
@@ -63,7 +63,7 @@ namespace bikestore.Api.Controllers
         {
             try
             {
-                var result = _roleService.Update(_mapper.Map<User>(model));
+                var result = _userService.Update(_mapper.Map<User>(model));
                 return new ResponseData { Success = true, Data = _mapper.Map<UserModel>(result) };
             }
             catch (Exception ex) { return new ResponseData { Success = false, Message = ex.Message }; }
@@ -74,7 +74,7 @@ namespace bikestore.Api.Controllers
         {
             try
             {
-                return new ResponseData { Success = _roleService.Delete(id) };
+                return new ResponseData { Success = _userService.Delete(id) };
             }
             catch (Exception ex) { return new ResponseData { Success = false, Message = ex.Message }; }
         }

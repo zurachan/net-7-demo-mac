@@ -37,7 +37,7 @@ export class AuthenticateService {
   Logout() {
     localStorage.removeItem('token');
     this.credentialSubject.next(null);
-    this.authGoogleService.signOut();
+    // this.authGoogleService.signOut();
     this.router.navigate(['/login']);
   }
 

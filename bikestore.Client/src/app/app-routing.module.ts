@@ -30,15 +30,9 @@ const routes: Routes = [
     component: StaffComponent,
   },
   {
-    path: '',
-    children: [
-      {
-        path: '',
-        loadChildren: () => import('../app/page/system/system.component').then((m) => m.SystemComponent),
-      }
-    ]
-  }
-
+    path: 'system',
+    loadChildren: () => import('../app/page/system/system.module').then((m) => m.SystemModule),
+  },
 ];
 
 @NgModule({

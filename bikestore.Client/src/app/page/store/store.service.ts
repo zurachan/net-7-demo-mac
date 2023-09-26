@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const urlApi = 'https://localhost:7071/';
+const urlApi = 'https://localhost:44382/api/';
 const currentData = 'store';
 
 @Injectable({
